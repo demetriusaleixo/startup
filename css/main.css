@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+/* GERAL */
+
+:root {
+    --cor-1: #1649A5; /*#2A8AA0*/
+    --cor-2: #FE9904;
+    --cor-3: #F7F7F7;
+    --cor-texto1: #f0f0f0;
+    --cor-texto2: #000000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 99.1vw;
+    height: 100vh;
+    font-family: "Open sans", sans-serif;
+    font-size: 12pt;
+}
+
+.titulo {
+    text-align: center;
+    margin-top: 5em;
+}
+
+/* CABEÇALHO */
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 250px;
+    width: 100%;
+    height: 120px;
+    background-color: var(--cor-3);
+    box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.164);
+}
+
+.logo {
+    cursor: pointer;
+}
+
+nav svg {
+    fill: var(--cor-texto2);
+}
+
+#menu-ativo {
+    display: none;
+}
+
+.abrir-menu, .fechar-menu {
+    display: none;
+}
+
+.links-menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    margin: 0 20px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--cor-texto2);
+
+    transition: .2s;
+
+    &:hover {
+        color: var(--cor-1);
+    }
+}
+
+.cadastro, .login {
+    padding: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.cadastro {
+    font-size: 12pt;
+    color: var(--cor-1);
+    background-color: transparent;
+}
+
+.login {
+    font-size: 12pt;
+    color: var(--cor-texto1);
+    background-color: var(--cor-1);
+}
+
+@media (max-width: 1390px) {
+    .links-menu {
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 10;
+        width: 300px;
+        height: 100%;
+
+        background-color: var(--cor-texto1);
+        box-shadow: -5px 0px 5px rgba(0, 0, 0, 0.096);
+        transition: .75s ease-out;
+    }
+
+    nav {
+        justify-content: flex-start;
+        padding: 0px;
+    }
+
+    nav a {
+        height: auto;
+        width: 100%;
+        padding: 20px 30px;
+        align-items: flex-start;
+    }
+
+    .botoes {
+        margin-left: auto;
+    }
+
+    .abrir-menu, .fechar-menu {
+        cursor: pointer;
+        padding: 20px;
+        display: block;
+    }
+
+    #menu-ativo:checked ~ .links-menu {
+        right: 0;
+    }
+
+    #menu-ativo:checked ~ #overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+}
+
+/* CORPO */
+
+.inicio {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 800px;
+    gap: 200px;
+    padding: 50px 250px;
+    background-color: var(--cor-1);
+}
+
+.txt-inicio p {
+    text-align: justify;
+    padding: 10px;
+    font-size: 18pt;
+    color: var(--cor-texto1);
+}
+
+.txt-inicio span {
+    color: var(--cor-2);
+}
+
+.txt-inicio h1 {
+    margin-bottom: 10px;
+    font-size: 3em;
+    color: var(--cor-texto1);
+}
+
+.setores {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 250px;
+    margin-top: 50px;
+}
+
+.bloco {
+    cursor: pointer;
+    padding: 10px 30px;
+    border-radius: 20px;
+    border: 1px solid var(--cor-2);
+
+    transition: .75s;
+
+    &:hover {
+        scale: 1.01;
+        box-shadow: 0px 0px 20px orange;
+    }
+}
+
+.bloco h2 {
+    text-align: center;
+}
+
+hr {
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 100px;
+    width: 85%;
+}
+
+.lojas-destaques {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 200px;
+    margin-top: 50px;
+}
+
+.destaque {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--cor-2);
+    padding: 10px 20px;
+
+    transition: .75s;
+
+    &:hover {
+        scale: 1.01;
+        box-shadow: 0px 0px 20px orange;
+    }
+}
+
+/* RODAPÉ */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-image: linear-gradient(to bottom, #2A8AA0, var(--cor-1));
+    margin-top: 100px;
+    padding: 30px 500px;
+}
+
+ .redes {
+    display: flex;
+    gap: 10px;
+    color: var(--cor-texto1);
+ }
+
+ .equipe {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: var(--cor-texto1);
+ }
